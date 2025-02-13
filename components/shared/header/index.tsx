@@ -1,8 +1,12 @@
-import { ShoppingCart, UserIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+
 import { Button } from '@/components/ui/button'
+import ModeToogle from './mode-toogle'
+
 import { APP_NAME } from '@/lib/constants'
+
+import { ShoppingCart, UserIcon } from 'lucide-react'
 
 const Header = () => {
   return (
@@ -23,12 +27,13 @@ const Header = () => {
           </Link>
         </div>
         <div className='space-x-2'>
+          <ModeToogle />
           <Button asChild variant='ghost'>
             <Link href='/card'>
               <ShoppingCart /> Cart
             </Link>
           </Button>
-          <Button asChild variant='ghost'>
+          <Button asChild>
             <Link href='/sign-in'>
               <UserIcon /> Sign In
             </Link>
