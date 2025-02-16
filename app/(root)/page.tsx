@@ -1,17 +1,15 @@
 // testing loading spinner (make HomePage async and run await delay(2000))
 // const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-import sampleData from "@/db/sample-data";
 import ProductList from "@/components/shared/product/product-list";
+import { getLatestProducts } from "@/lib/actions/product.actions";
 
-const HomePage = () => {
+const HomePage = async () => {
+  const latestProducts = await getLatestProducts();
+
   return (
     <>
-      <ProductList
-        data={sampleData.products}
-        title="Newest Arrivals"
-        limit={4}
-      />
+      <ProductList data={latestProducts} title="Newest Arrivals" />
     </>
   );
 };
