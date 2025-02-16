@@ -46,3 +46,15 @@ npx prisma studio
 
 npx tsx ./db/seed // romove all records from Product db and seed data from sampleData file
 ```
+
+Generate secret key by using following command:
+
+```bash
+openssl rand -base64 32
+```
+
+and then use that key in .env file:
+
+```bash
+NEXTAUTH_SECRET="<SECRET_KEY>"
+```
